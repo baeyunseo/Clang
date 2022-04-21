@@ -1,23 +1,26 @@
+//평가 문자로 내용을 다르게 출력하기
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-// 5장 3절 [문제1] 실습 조건문 : 정수를 입력받아 다음을 출력하라.
-/*0도 미만이면 cold, indoor 출력
-0도 이상이면서 40도 미만이면 moderate, outdoor출력
-40도 이상이면 hot,indoor 출력*/
-
+void gradeTest(char g);
 int main(void) {
-	int t;
-	scanf("%d", &t);
-	if(t<0) {
-		printf("cold, indoor");
-	}
-	else if (t >= 0 && t < 40) {
-		printf("moderate, outdoor");
-	}
-	else if (t >= 40) {
-		printf("hot, indoor");
-	}
+	char grade; //입력 문자 변수
+	scanf("%c", &grade);
+	gradeTest(grade);
 
 	return 0;
+}
+
+void gradeTest(int g) {
+	switch (g) {
+	case 'A':
+		printf("best!!!"); break;
+	case 'B':
+		"good!!"; break;
+	case 'C':
+		printf("run!"); break;
+	case 'D':
+		printf("slowly~"); break;
+	default: printf("what?"); break;
+	}
 }
